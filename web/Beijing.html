@@ -13,12 +13,60 @@
 
 </head>
 <body>
+	<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <a class="navbar-brand" href="#">ColorfulAQI</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  <div class="container">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="China.html">China <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="Beijing.html">Beijing</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="about.html">About</a>
+      </li>
+    </ul>
+  </div>
+      <!--
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+      -->
+    <!--
+
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    -->
+</nav>
+<div class="container">
   <div class="row">
     <div class="col-sm">
-      <h1>AQI Map: Beijing (<a href="China.html">China</a>)</h1>
-      <p>Select Time in Past 24 Hours: <input type="range" min="-23" max="0" value="0" style="width: 40em;" id="hourRangeInput" oninput="onSliderInput"></p>
+      <h1>AQI Map: Beijing (<a class="btn btn-primary" href="China.html" role="button">Go to China</a>)</h1>
+      <p>Select Time in Past 24 Hours: <input type="range" class="custom-range" min="-23" max="0" value="0" style="width: 40em;" id="hourRangeInput" oninput="onSliderInput"></p>
 	    <p>Selected Time(UTC+8): <span id="timeText"></span></p>
       <div id="mapid"></div>
     </div>
