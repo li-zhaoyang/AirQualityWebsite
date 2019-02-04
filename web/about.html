@@ -1,0 +1,121 @@
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="MapStyle.css">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+  integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+  crossorigin=""/>
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+  integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+  crossorigin=""></script>
+
+</head>
+<body>
+	<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <a class="navbar-brand" href="China.html">ColorfulAQI</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="China.html">China</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="Beijing.html">Beijing</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="about.html">About<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+      <!--
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+      -->
+    <!--
+
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    -->
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h1 align="center">ColorfulAQI</h1>
+      <h2>Intro</h2>
+      <p>ColorfulAQI project shows choropleths of Air Quality Index in last hours in multiple scales(currently supports China and Beijing). The trend of air pollution in locations of interest can be determined through the variation of colors.</p>
+      <p>It's a useful tool for people in areas without monitoring stations to check their air quality. It's also helpful for those interested in the factors of air pollution in their location. Just do some reasoning on air quality trend with weather, daily commute peak hours and you'll find something interesting.</p>
+      <h2>Idea</h2>
+      <p>Air pollution is a severe public health and economic issue in China and geographical distribution of air pollution interests me a lot.</p>
+      <p>At the city scale, different areas might suffer from different levels of air pollution at some time or accumulated time periods. 
+        This could affect people's choice on where to live and work in a city. 
+      </p>
+      <p>
+        Take Beijing as an example, the northern part of city enjoys better air since it's closed to mountain area and welcomes fresh north wind. People living in south is not that lucky at most times.
+      </p>
+      <center>
+        <img src="res/beijing-boundary.jpg" />
+      </center>
+      <center>
+        <p>Image source: http://www.nbdyf.com/shenjingxitongke/3941.html</p>
+      </center>
+      <p>The picture above shows a clear boundary of transparent air (right part) and polluted air (left part) above the city. This scene appears frequently in winter as the result of rivalries between pollutants from factories on North China Plain and freezing north wind from Siberia.</p>
+      <center>
+        <iframe width="640" height="360"
+          src="https://www.youtube.com/embed/Wsvp6rmjQZI">
+        </iframe>
+      </center>
+      <p>Pollutants in form of haze is swallowing Beijing from south to north. This happens when wind from north become not strong enough to resist the pollutant from south.</p>
+      <p>When these scenes appear in Beijing, simply check the maps on this site to monitor the "battle" between wind and pollutants above Beijing.</p>
+      <h2>Air Quality Index</h2>
+      <p>Air Quality Index(AQI) is an integrated index calculated from the strength of multiple pollutants including PM2.5, SO2 and others. </p>
+      <p>AQI is measured by range o 0-500 and is categorized into 6 levels. The color schema of pollution levels of this website conforms to the widely used schema below, with linear interpolations for the values in between.</p>
+      <center>
+        <img src="res/aqi-legend.png" />
+      </center>
+      <center>
+        <p>Image source: http://www.sparetheair.com/aqi.cfm</p>
+      </center>
+      <p>Sometimes the calculated value gets higher than 500 and become off the charts. This severe situation could last for days in winter of northern China years ago, but it's rarely observed nowadays as the effect of iron-hand pollution control measurements in recent years. </p>
+      <p>Fun fact: Air quality in Beijing becomes better than Shanghai in winter (and only for winter!) of 2017-2018.</p>
+      <!--
+      <h2>Techs</h2>
+      -->
+      <h2>Data Source</h2>
+      <p>Thanks for the <a href="http://aqicn.org/api/">JSON API provided by aqicn.org</a>. The function of this website is made possible with the latest hourly data acquired from the APIs. Their data integration job from various sources of official monitoring agencies is highly admired.</p>
+      <h2>Contact</h2>
+      <p>I would love to hear any suggestions of related functions with in current scope(in need of a project manager:) ). Please contact me at zhaoyanl (AT) usc (DOT) edu for any comments or suggestions. </p>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="AboutScript.js" ></script>
+
+</body>
